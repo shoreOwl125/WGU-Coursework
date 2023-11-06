@@ -1,2 +1,2 @@
 # WGU-Coursework
-Projects from WGU CS Program
+Projects from Western Governors University CS Program
