@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Application_Controller">
+   <children>
+      <TabPane prefHeight="600.0" prefWidth="1000.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab closable="false" text="Customers">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="66.0" prefWidth="761.0">
+                     <children>
+                        <TableView fx:id="Customers_Table" layoutX="24.0" layoutY="55.0" prefHeight="427.0" prefWidth="947.0">
+                          <columns>
+                            <TableColumn fx:id="customerIdCol" prefWidth="57.0" text="ID" />
+                            <TableColumn fx:id="customerNameCol" prefWidth="172.0" text="Name" />
+                              <TableColumn fx:id="customerPhoneCol" prefWidth="104.0" text="Phone " />
+                              <TableColumn fx:id="customerAddressCol" prefWidth="244.0" text="Address" />
+                              <TableColumn fx:id="customerPostalCodeCol" prefWidth="90.0" text="Postal Code" />
+                              <TableColumn fx:id="customerDivisionCol" prefWidth="162.0" text="Division" />
+                              <TableColumn fx:id="customerCountryCol" prefWidth="117.0" text="Country" />
+                          </columns>
+                        </TableView>
+                        <Button layoutX="28.0" layoutY="490.0" mnemonicParsing="false" onAction="#cust_add_btn" text="Add">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Button>
+                        <Button layoutX="79.0" layoutY="490.0" mnemonicParsing="false" onAction="#cust_update_btn" text="Update">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Button>
+                        <Button layoutX="150.0" layoutY="490.0" mnemonicParsing="false" onAction="#cust_delete_btn" text="Delete">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Button>
+                        <Button layoutX="921.0" layoutY="514.0" mnemonicParsing="false" onAction="#cust_exit_btn" prefHeight="32.0" prefWidth="50.0" text="Exit">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab closable="false" text="Appointments">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="487.0" prefWidth="814.0">
+                     <children>
+                        <TableView fx:id="Appointments_Table" layoutX="22.0" layoutY="55.0" prefHeight="426.0" prefWidth="954.0">
+                           <columns>
+                              <TableColumn fx:id="apptIdCol" prefWidth="60.0" text="Appt_ID" />
+                              <TableColumn fx:id="apptTitleCol" prefWidth="79.0" text="Title" />
+                              <TableColumn fx:id="apptDescCol" prefWidth="150.0" text="Description" />
+                              <TableColumn fx:id="apptLocationCol" prefWidth="96.0" text="Location" />
+                              <TableColumn fx:id="apptContactCol" prefWidth="94.0" text="Contact" />
+                              <TableColumn fx:id="apptTypeCol" prefWidth="92.0" text="Type" />
+                              <TableColumn fx:id="apptStartCol" prefWidth="122.0" text="Start Date and Time" />
+                              <TableColumn fx:id="apptEndCol" prefWidth="113.0" text="End Date and Time" />
+                              <TableColumn fx:id="apptCustIdCol" prefWidth="84.0" text="Customer_ID" />
+                              <TableColumn fx:id="apptUserIdCol" prefWidth="63.0" text="User_ID" />
+                           </columns>
+                        </TableView>
+                        <Button layoutX="27.0" layoutY="490.0" mnemonicParsing="false" onAction="#appt_add_btn" text="Add">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Button>
+                        <Button layoutX="78.0" layoutY="490.0" mnemonicParsing="false" onAction="#appt_update_btn" text="Update">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Button>
+                        <Button layoutX="149.0" layoutY="490.0" mnemonicParsing="false" onAction="#appt_delete_btn" text="Delete">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Button>
+                        <RadioButton layoutX="830.0" layoutY="26.0" mnemonicParsing="false" onAction="#radioButtonMonth" text="Month">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="timeframe" />
+                           </toggleGroup></RadioButton>
+                        <RadioButton layoutX="756.0" layoutY="26.0" mnemonicParsing="false" onAction="#radioButtonWeek" text="Week" toggleGroup="$timeframe">
+                           <font>
+                              <Font size="14.0" />
+                           </font></RadioButton>
+                        <RadioButton layoutX="911.0" layoutY="26.0" mnemonicParsing="false" onAction="#radioButtonAll" selected="true" text="All" toggleGroup="$timeframe">
+                           <font>
+                              <Font size="14.0" />
+                           </font></RadioButton>
+                        <Button layoutX="919.0" layoutY="515.0" mnemonicParsing="false" onAction="#appt_exit_btn" prefHeight="32.0" prefWidth="50.0" text="Exit">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab closable="false" text="Reports">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane layoutX="120.0" layoutY="48.0" prefHeight="367.0" prefWidth="728.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="290.0" minWidth="10.0" prefWidth="203.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="521.0" minWidth="10.0" prefWidth="512.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#report1_btn" prefHeight="56.0" prefWidth="203.0" text="Monthly Customer Appointments" textAlignment="CENTER" wrapText="true">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></Button>
+                              <Button mnemonicParsing="false" onAction="#report2_btn" prefHeight="56.0" prefWidth="205.0" text="All Contacts Schedules" wrapText="true" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></Button>
+                              <Button mnemonicParsing="false" onAction="#report3_btn" prefHeight="56.0" prefWidth="205.0" text="Contact's Customers by Division" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></Button>
+                              <TextArea prefHeight="123.0" prefWidth="514.0" text="This report provides a list of customer appointments by type and month." wrapText="true" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font></TextArea>
+                              <TextArea prefHeight="122.0" prefWidth="462.0" text="This report provides a schedules for each contact." GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font></TextArea>
+                              <TextArea prefHeight="200.0" prefWidth="200.0" text="This report displays each contact's number of customers they have appointments with from each Division." wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font></TextArea>
+                           </children>
+                        </GridPane>
+                        <Button layoutX="927.0" layoutY="516.0" mnemonicParsing="false" onAction="#reports_exit_btn" prefHeight="33.0" prefWidth="50.0" text="Exit">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
